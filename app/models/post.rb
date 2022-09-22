@@ -6,8 +6,7 @@ class Post < ApplicationRecord
   after_save :update_counter
 
   def update_counter
-    user.PostCounter.nil? ? user.PostCounter = 1 : user.PostCounter += 1
-    user.update(PostCounter: user.PostCounter)
+    user.increment!(:PostsCounter)
   end
 
   def recent_comment
