@@ -91,6 +91,7 @@ GEM
     diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.11.0)
+    ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -260,9 +261,10 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg (~> 1.1)
+  ffi
   puma (~> 5.0)
   rails (~> 7.0.4)
-  rspec-rails (~> 4.0.0.beta2)
+  rspec-rails
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
   sprockets-rails
