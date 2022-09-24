@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Post', type: :model do
-  user1 = User.create(Name: 'Bura', Photo: 'link/bura', Bio: 'Software Developer.')
   post = Post.create(Title: 'Post1', Text: 'Post 1', CommentsCounter: 1, LikesCounter: 0)
 
   before { post.save }
