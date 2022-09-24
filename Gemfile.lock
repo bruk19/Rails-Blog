@@ -258,10 +258,10 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  ffi
   importmap-rails
   jbuilder
   pg (~> 1.1)
-  ffi
   puma (~> 5.0)
   rails (~> 7.0.4)
   rspec-rails

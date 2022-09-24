@@ -1,17 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.create(Name: 'Bruk', Photo: 'link/bura.png', Bio: 'Full-Stack developer')
-   
+  user = User.create(Name: 'Bruk', Photo: 'https://avatars.githubusercontent.com/u/101924220?v=4', Bio: 'Software developer')
+
   describe 'Tests for User model and validation' do
-    
-    it 'Name should be present' do
-        expect(subject.Name).present?
-        subject.Name = nil
-        expect(subject).to_not be_valid
-      end
+    it 'is valid ' do
+      user.PostCounter = 1
+      expect(user).to be_valid
+    end
 
     it 'is not valid' do
+      user.PostCounter = -1
       expect(user).to_not be_valid
     end
 
