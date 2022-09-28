@@ -8,6 +8,16 @@ RSpec.describe 'Posts', type: :request do
         end
     end
 
+    it 'Should render the index template' do 
+        get '/posts/index'
+        expect(response).to render_template(:index)
+    end
+
+    it 'does not render a different template' do 
+        get '/posts/index'
+        expect(response).to_not render_template(:show)
+    end
+
     describe 'GET /show' do
         it 'Return http success' do
           get '/posts/show'
