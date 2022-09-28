@@ -18,6 +18,11 @@ RSpec.describe 'Users', type: :request do
     expect(response).to_not render_template(:show)
   end
 
+  it 'Should include the correct placeholder' do
+    get '/users/index'
+    expect(response.body).to include(' Here is a list of Users.')
+  end
+
   describe 'GET /show' do
     it 'Return http success' do
       get '/users/show'
@@ -33,5 +38,10 @@ RSpec.describe 'Users', type: :request do
   it 'does not render a different template' do
     get '/users/show'
     expect(response).to_not render_template(:index)
+  end
+
+  it 'Should include the correct placeholder' do
+    get '/users/show'
+    expect(response.body).to include(' Here is a list of Single User. ')
   end
 end

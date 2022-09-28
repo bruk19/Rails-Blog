@@ -18,6 +18,11 @@ RSpec.describe 'Posts', type: :request do
     expect(response).to_not render_template(:show)
   end
 
+  it 'Should include the correct placeholder' do
+    get '/posts/index'
+    expect(response.body).to include('Here is a list of posts')
+  end
+
   describe 'GET /show' do
     it 'Return http success' do
       get '/posts/show'
@@ -33,5 +38,10 @@ RSpec.describe 'Posts', type: :request do
   it 'does not render a different template' do
     get '/posts/show'
     expect(response).to_not render_template(:index)
+  end
+
+  it 'Should include the correct placeholder' do
+    get '/posts/show'
+    expect(response.body).to include('Here is a list of single post.')
   end
 end
