@@ -1,1 +1,14 @@
-<h1> Here is a list of Single User. </h1>
+<div>
+    <%= render partial: 'partials/user', locals: {user: @user} %>
+    <p>Bio: <%= @user.Bio %> </p>
+
+    <% if @user.PostCounter < 0 %> 
+        <p><%= @user.Name %> doesn't have a post !></p>
+    <% else %>
+        <% @user.recent_post.each do |post| %>
+        <%= render partial: 'partials/post', locals: {post: post} %>
+        <% end %>
+        <%= link_to("See all posts", user_posts_path(@user)) %>
+    <% end %>
+    </div>
+</div>
