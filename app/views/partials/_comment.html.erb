@@ -1,0 +1,7 @@
+<% if post.CommetCounter > 0 %>
+  <% post.recent_comment.each do |comment| %>
+    <p><%= comment.user.name %> : <%= comment.text%></p>
+  <% end %>
+<% else %>
+  <p>No comments!</p>
+<% end %>

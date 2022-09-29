@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def recent_post
     posts.order(create_at: :desc).limit(3)
   end
+
+  def all_posts
+    posts.order(created_at: :desc)
+  end
 end
