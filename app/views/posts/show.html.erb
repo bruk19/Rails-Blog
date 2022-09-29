@@ -1,1 +1,11 @@
-<h1>Here is a list of single post.</h1>
+<p><%= @post.Title %> by <%= @post.user.Name%></p>
+<p>Comments: <span><%= @post.CommetCounter %></span>, Likes: <span><%= @post.LikesCounter %></span></p>
+
+<%= @post.text %>
+<% if @post.comments.length > 0 %>
+    <% @post.comments.each do |comment| %>
+    <p><%= comment.Name %> : <%= comment.Text %></p>
+<% end %>
+    <% else %>
+    <p>There are no comments !!</p>
+<% end %>
