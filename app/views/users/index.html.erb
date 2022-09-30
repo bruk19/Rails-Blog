@@ -1,1 +1,6 @@
-<h1> Here is a list of Users.</h1>
+<% @users.each do |user| %>
+
+  <%= link_to user do %>
+  <%= render partial: 'partials/user', locals: {user: user} %>
+  <% end %>
+<% end %>
