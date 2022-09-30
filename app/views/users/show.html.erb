@@ -1,9 +1,12 @@
 <div>
     <%= render partial: 'partials/user', locals: {user: @user} %>
-    <p>Bio: <%= @user[0].Bio %> </p>
-
-    <p><%= @user[0].recent_post[0]%> </p>
-
-    
-    </div>
+    <p>Bio: <%= @user.bio %> </p>
+    <% if @user.posts.count < 0 %> 
+        <p><%= @user.name %> doesn't have a post !></p>
+    <% else %>
+        <% @user.recent_post.each do |post| %>
+            <%= render partial: 'partials/post_helper', locals: {post: post} %>
+        <% end %>   
+         <%= link_to("See all posts", user_post_path(@user))  %> 
+    <% end %>
 </div>

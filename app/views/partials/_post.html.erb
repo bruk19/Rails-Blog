@@ -1,6 +1,5 @@
-<h2><%= post.Title%> </h2>
-  <% post.Text %>
-  <% end %>
-  <p>Comments: <span><%= PostCounter %></span>, 
-   Likes: <span><%= LikesCounter %></span></p>
-   
+<h1><%= post.id%> </h1>
+<h3><%= post.title%> </h3>
+<%= post.text %>
+<p >Comments: <span><%= post.comments.count %></span>, 
+Likes: <span><%= post.likes.count %></span></p>

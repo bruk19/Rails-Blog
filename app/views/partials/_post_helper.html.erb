@@ -1,0 +1,9 @@
+ <h2><%= post.Title%> </h2>
+    <% if post.text.length > 110 %>
+      <%= truncate(post.text, length: 110) ... %>
+    <% else %>
+      <%= post.Text %>.
+    <% end %>
+  </p>
+  <p>Comments: <span><%= post.CommetCounter %></span>, Likes: <span><%= post.LikesCounter %></span></p>
+</div>
