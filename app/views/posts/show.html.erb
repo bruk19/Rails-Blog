@@ -4,7 +4,7 @@
 <%= @post.text %>
 <% if @post.comments.length > 0 %>
     <% @post.comments.each do |comment| %>
-    <p><%= comment.Name %> : <%= comment.Text %></p>
+    <p><%= comment.user.Name %> : <%= comment.Text %></p>
 <% end %>
     <% else %>
     <p>There are no comments !!</p>
