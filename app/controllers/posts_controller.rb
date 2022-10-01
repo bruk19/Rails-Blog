@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+
   def create
     @post = Post.create(post_params)
     @post.user = current_user
@@ -22,7 +23,8 @@ class PostsController < ApplicationController
     end
   end
 
-  private 
+  private
+
   def post_params
     params.require(:post).permit(:Title, :Text)
   end
