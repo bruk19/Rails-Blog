@@ -1,4 +1,4 @@
-<% if post.CommetCounter > 0 %>
+<% if post.CommentsCounter > 0 %>
   <% post.recent_comment.each do |comment| %>
     <p><%= comment.user.Name %> : <%= comment.Text%></p>
   <% end %>

@@ -1,8 +1,8 @@
 <div>
     <%= render partial: 'partials/user', locals: {user: @user} %>
-    <p>Bio: <%= @user.bio %> </p>
-    <% if @user.posts.count < 0 %> 
-        <p><%= @user.name %> doesn't have a post !></p>
+    <p>Bio: <%= @user.Bio %> </p>
+    <% if @user.PostCounter < 0 %> 
+        <p><%= @user.Name %> doesn't have a post !></p>
     <% else %>
         <% @user.recent_post.each do |post| %>
             <%= render partial: 'partials/post_helper', locals: {post: post} %>
