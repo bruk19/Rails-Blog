@@ -2,6 +2,9 @@
 <p>Comments: <span><%= @post.CommetCounter %></span>, Likes: <span><%= @post.LikesCounter %></span></p>
 
 <%= @post.text %>
+    <%= form_with model: Like, url: post_likes_path(@post.user, @post), method: :post do |form| %>
+    <% form.submit "Like" %>
+<% end %>
 <% if @post.comments.length > 0 %>
     <% @post.comments.each do |comment| %>
     <p><%= comment.user.Name %> : <%= comment.Text %></p>
@@ -9,3 +12,8 @@
     <% else %>
     <p>There are no comments !!</p>
 <% end %>
+
+<div>
+    <h3>Add a comment</h3>
+    <%= render partial: 'partials/_new' %>
+</div>

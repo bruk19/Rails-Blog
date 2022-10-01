@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get 'posts/show'
 
   resources :users, only: %i[index show] do
-    resources :posts, only: %i[index show]
+    resources :posts, only: %i[index new form create]
+  end
+
+  resources :posts do
+    resources :comments, only: [:create]
+    resources :likes, only: [:create]
   end
 end
