@@ -17,4 +17,4 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:Text)
     end
-  end
+end
