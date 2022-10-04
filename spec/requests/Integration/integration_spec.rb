@@ -32,6 +32,12 @@ RSpec.describe 'User pages test index/show ', type: :feature do
       expect(page).to have_text('Number of posts: 4')
     end
 
+    it 'Should redirect to user page when clicked on a user' do
+      visit users_path
+      click_on(@first_user.id)
+      expect(page).to have_current_path(user_path(@first_user))
+    end
+
     describe 'User show page test' do
       it 'Should show the username ' do
         visit user_path(@first_user)

@@ -1,6 +1,6 @@
 <% @users.each do |user| %>
 
-  <%= link_to user do %>
+  <%= link_to user, id: user.id do %>
   <%= render partial: 'partials/user', locals: {user: user} %>
   <% end %>
 <% end %>
