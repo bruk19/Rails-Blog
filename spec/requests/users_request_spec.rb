@@ -22,8 +22,7 @@ RSpec.describe 'Users', type: :request do
     
     it 'Check if response status was correct' do
       expect(response).to have_http_status(:success)
-    end
-   
+    end 
     
   end
 end
