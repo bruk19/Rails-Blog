@@ -9,6 +9,14 @@ RSpec.describe 'Posts', type: :request do
       get user_posts_path(@user)
   end
 
+  it 'Check if response status was correct' do
+    expect(response).to have_http_status(:success)
+  end
+
+  it 'Check if a correct template was rendered' do
+    expect(response).to render_template(:index)
+  end
+
   describe 'GET /show' do
     before(:each) do
       @user = User.create(Name: 'Jo', Photo: 'sodome/png', Bio: 'web Developer from Ethiopia')
