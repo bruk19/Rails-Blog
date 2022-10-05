@@ -1,47 +1,27 @@
 require 'rails_helper'
-
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    it 'Return http success' do
-      get '/users/index'
+    before(:each) do
+      get users_path
+    end
+    it 'Check if response status was correct' do
       expect(response).to have_http_status(:success)
     end
-  end
-
-  it 'Should render the index template' do
-    get '/users/index'
-    expect(response).to render_template(:index)
-  end
-
-  it 'does not render a different template' do
-    get '/users/index'
-    expect(response).to_not render_template(:show)
-  end
-
-  it 'Should include the correct placeholder' do
-    get '/users/index'
-    expect(response.body).to include(' Here is a list of Users.')
+    it 'Check if a correct template was rendered' do
+      expect(response).to render_template(:index)
+    end
   end
 
   describe 'GET /show' do
-    it 'Return http success' do
-      get '/users/show'
+    before(:each) do
+      @user = User.create(Name: 'Bruk', Photo:
+        'https://drive.google.com/file/d/1yi3fHkqGhPsmXconfRANucRZ7EpLl7dw/view',
+                          Bio: 'test for User')
+      get user_path(@user)
+    end
+
+    it 'Check if response status was correct' do
       expect(response).to have_http_status(:success)
     end
-  end
-
-  it 'Should render the index template' do
-    get '/users/show'
-    expect(response).to render_template(:show)
-  end
-
-  it 'does not render a different template' do
-    get '/users/show'
-    expect(response).to_not render_template(:index)
-  end
-
-  it 'Should include the correct placeholder' do
-    get '/users/show'
-    expect(response.body).to include(' Here is a list of Single User. ')
   end
 end

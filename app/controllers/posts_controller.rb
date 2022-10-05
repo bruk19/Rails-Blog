@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:authorId])
+    @user = User.find_by(params[:authorId])
     @posts = @user.posts
   end
 

@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root 'users#index'
   get 'users/show'
   get 'posts/index'
   get 'posts/show'
+  root 'users#index'
 
   resources :users, only: %i[index show] do
     resources :posts, only: %i[index new form create]

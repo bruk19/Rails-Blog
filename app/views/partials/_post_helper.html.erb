@@ -1,5 +1,5 @@
  <h2><%= post.Title%> </h2>
-    <% if post.text.length > 110 %>
+    <% if post.Text.length > 110 %>
       <%= truncate(post.text, length: 110) ... %>
     <% else %>
       <%= post.Text %>.
