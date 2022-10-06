@@ -8,6 +8,7 @@ default: &default
 development:
   <<: *default
   database: Rails_blog_test
+  host: 'localhost'
 test:
   <<: *default
   database: Rails_blog_test
