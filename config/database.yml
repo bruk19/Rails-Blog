@@ -8,6 +8,7 @@ default: &default
 development:
   <<: *default
   database: Rails_blog_test
+  host: 'localhost'
 test:
   <<: *default
   database: Rails_blog_test
@@ -16,3 +17,4 @@ production:
   database: Rails_blog_test
   username: rails
   password: <%= ENV["RAILS_BLOG_DATABASE_PASSWORD"] %>
+  host: localhost
