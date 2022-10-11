@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   devise_for :users
+  
   devise_scope :user do
     get 'users/sign_out' => 'devise/sessions#destroy'
   end
   root 'users#index'
 
-  resources :users, only: %i[index show] do
-    resources :posts, only: %i[index new form create]
+  resources :users, only: [:index, :show] do
+    resources :posts, only: [:index, :new, :form, :create]
   end
 
   resources :posts do
