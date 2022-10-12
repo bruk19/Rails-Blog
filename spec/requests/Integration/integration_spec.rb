@@ -59,6 +59,11 @@ RSpec.describe 'User pages test index/show ', type: :feature do
         expect(page).to have_text('Number of posts')
       end
 
+      it 'Should show the Number of Comments' do
+        visit user_path(@first_user)
+        expect(page).to have_text('Comments')
+      end
+
       it 'Should show the bio' do
         visit user_path(@first_user)
         expect(page).to have_content(@first_user.Bio)
