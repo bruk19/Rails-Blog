@@ -13,6 +13,10 @@
     <p>There are no comments !!</p>
 <% end %>
 
+<% if can? :destroy, comment %>
+    <%= button_to "Destroy this comment", post_comment_path(post.id, comment.id), method: :delete %>
+<% end %>
+
 <div>
     <h3>Add a comment</h3>
     <%= render partial: 'partials/_new' %>
