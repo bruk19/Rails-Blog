@@ -10,7 +10,7 @@ class Ability
       can :manage, Post
     else
       can [:read, :create], Post
-      can [:update :destroy], Post, { Author_id: user.id }
+      can [:update, :destroy], Post, { Author_id: user.id }
     end
   end
 end

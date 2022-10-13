@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find_by(params[:authorId])
     @posts = @user.posts
@@ -25,6 +26,14 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @status_update = Post.find(params[:id])
+    if @status_update.present?
+      @status_update.destroy
+    end
+    redirect_to root_url
   end
 
   private
