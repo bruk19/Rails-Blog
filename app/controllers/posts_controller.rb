@@ -29,11 +29,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @status_update = Post.find(params[:id])
-    if @status_update.present?
-      @status_update.destroy
-    end
-    redirect_to root_url
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    # flash[:notice] = ['Comment Deleted Successfully']
+    redirect_to user_post_path(current_user, params[:post_id]), notice: 'Successfully removed the comment.'
   end
 
   private

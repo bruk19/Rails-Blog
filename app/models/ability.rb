@@ -9,8 +9,8 @@ class Ability
     elsif user.role == 'admin'
       can :manage, :all
     else
-      can [:read, :create], :all
-      can [:update, :destroy], :all, { Author_id: user.id }
+      can %i[read create], :all
+      can %i[update destroy], :all, { Author_id: user.id }
     end
   end
 end
