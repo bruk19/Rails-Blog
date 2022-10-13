@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
       flash.now[:error] = 'An error occurred : Comment could not be created'
     end
   end
-  
+
   def destroy
     post = Post.find(params[:post_id])
     @status_update = Comment.find(params[:id])
