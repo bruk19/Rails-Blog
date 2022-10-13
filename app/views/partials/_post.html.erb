@@ -3,3 +3,7 @@
 <%= post.Text %>
 <p >Comments: <span><%= post.CommentsCounter %></span>, 
 Likes: <span><%= post.LikesCounter %></span></p>
+
+<% if can? :destroy, post %>
+     <%= button_to "Destroy this post", user_post_path(@user.id, post.id), method: :delete %>
+<% end %>

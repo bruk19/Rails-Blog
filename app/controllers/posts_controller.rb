@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find_by(params[:authorId])
     @posts = @user.posts
@@ -25,6 +26,13 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    # flash[:notice] = ['Comment Deleted Successfully']
+    redirect_to user_post_path(current_user, params[:post_id]), notice: 'Successfully removed the comment.'
   end
 
   private
