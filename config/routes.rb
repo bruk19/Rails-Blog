@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  get 'users/show'
-  get 'posts/index'
-  get 'posts/show'
+  devise_for :users
+  devise_scope :user do
+    get 'users/sign_out' => 'devise/sessions#destroy'
+  end
   root 'users#index'
 
   resources :users, only: %i[index show] do
