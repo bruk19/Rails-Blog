@@ -57,12 +57,22 @@ you can run one of the following command in your terminal
 
 ## Authors
 
-## Author
+## Author1
 👤 **Bruk Teshome**
 
 - GitHub: [@githubhandle](https://github.com/bruk19)
 - Twitter: [@twitterhandle](https://twitter.com/Bruktesh)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/bruk-teshome-ab4325226)
+
+
+##Author2
+👤 **Gideon Dadi**
+
+-Linkedin [@GideonDadi](https://www.linkedin.com/feed/)<br>
+-GitHub: [@gids_dadi](https://github.com/gids-dadi)<br>
+-Twitter: [@Dadi_AG](https://twitter.com/Dadi_AG)
+
+
 
 ## 🤝 Contributing
 
